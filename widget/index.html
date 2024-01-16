@@ -273,6 +273,12 @@
             return;
         }
 
+        obj.data = {
+            design: obj.data.design || {},
+            content: obj.data.content || {},
+            _buildfire: obj.data._buildfire || {}
+        }
+
         layout = obj.data.design.selectedLayout;
         compressImages = obj.data.design.compressImages;
 

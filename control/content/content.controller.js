@@ -63,6 +63,18 @@
                     if (!result.id) {
                         result.data = Utility.getDefaultScopeData();
                         firstTimeVisit = true;
+                    } else if (result.data) {
+                        result.data = {
+                            design: result.data.design || {},
+                            content: result.data.content || {},
+                            _buildfire: result.data._buildfire || {}
+                        };
+                    } else {
+                        result.data = {
+                            design: {},
+                            content: {},
+                            _buildfire: {}
+                        };
                     }
 
                     if (result && result.data && !angular.equals({}, result.data)) {
